@@ -2,7 +2,7 @@
 /**********************************************************
  * TimeUtil.h                                             *
  *                                                        *
- * Author: Manuel Schoch <info@manuel-schoch.net>         *                                                       *
+ * Author: Manuel Schoch <info@manuel-schoch.net>         *
  *                                                        *
  **********************************************************/
 

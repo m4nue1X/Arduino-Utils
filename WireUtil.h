@@ -56,6 +56,18 @@ public:
    * @return 0 on success, < 0 otherwise
    */
   static int readRegister(uint8_t dev_addr, uint8_t reg_addr, uint8_t n_bytes, uint32_t& res, bool lsb_first=false, uint32_t retry_us=0, uint32_t retry_interval_us=1000);
+  
+  /**
+   * Read multiple succeeding I2C registers in burst mode.
+   * @param dev_addr The I2C slave address
+   * @param reg_addr The address of the register to read
+   * @param n_bytes The number of bytes to read
+   * @param buf The data read
+   * @param retry_us The duration in microseconds how long to re-try, in case the slave sends a NACK (default: 0 -> don't re-try)
+   * @param retry_interval_us The interval how frequent to re-try reading the data (default: 800us)
+   * @return 0 on success, < 0 otherwise
+   */
+  static int readRegister(uint8_t dev_addr, uint8_t reg_addr, uint8_t n_bytes, uint8_t* buf, uint32_t retry_us=0, uint32_t retry_interval_us=1000);
 };
 
 #endif // WIREUTIL
